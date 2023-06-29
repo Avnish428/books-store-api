@@ -12,7 +12,6 @@ const SubCommentsJoiSchema = {
   }).required(),
   UpdateData: Joi.object({
     commentId: Joi.string().trim().normalize().required(),
-    // profileImage: Joi.string().trim().normalize().optional(),
     subCommentText: Joi.string().trim().normalize().optional(),
   }).required(),
 };
