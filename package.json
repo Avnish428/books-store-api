@@ -1,7 +1,7 @@
 {
-  "name": "student-result-management",
+  "name": "books-store",
   "version": "1.0.0",
-  "description": "student-result-management",
+  "description": "books-store",
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js",
@@ -26,6 +26,7 @@
     "joi": "^17.9.2",
     "lodash": "^4.17.21",
     "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
     "nodemon": "^2.0.22",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",

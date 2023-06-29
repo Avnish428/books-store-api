@@ -9,9 +9,9 @@ const path = require("path");
 var favicon = require("serve-favicon");
 const globalErrorHandler = require("./controllers/error.controller");
 const {AppError} = require("./utils/appError");
-const studentRouter = require("./routes/students.routes");
-const courseRouter = require("./routes/course.routes");
-const resultRouter = require("./routes/results.routes");
+const booksRouter = require("./routes/books.routes")
+const commentsRouter = require("./routes/comments.routes");
+const subCommentsRouter = require("./routes/subComments.routes");
 const helmet = require("helmet");
 const xss = require("xss-clean");
 const hpp = require("hpp");
@@ -49,9 +49,9 @@ app.use(express.static(`${__dirname}/public`));
 
 //Routes
 // 3) ROUTES
-app.use(API_PREFIX,studentRouter);
-app.use(API_PREFIX,courseRouter);
-app.use(API_PREFIX,resultRouter);
+app.use(API_PREFIX, booksRouter);
+app.use(API_PREFIX, commentsRouter);
+app.use(API_PREFIX, subCommentsRouter);
 
 //handled no route url error
 app.all("*", (req, res, next) => {
