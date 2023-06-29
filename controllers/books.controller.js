@@ -21,12 +21,14 @@ const BooksJoiSchema = {
 };
 
 // add data
-const addData = catchAsync(async (req, res) => {
+const addData = catchAsync(async (req, res,next) => {
   const {
     body: { title, description, price, discount },
     file,
   } = req;
-
+  if (!file) {
+    return next(new AppError("coverImage is required field", 400));
+  }
   let payload = { title, description, price, discount };
   if (file) {
     const coverImage = file.filename;

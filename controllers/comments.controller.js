@@ -19,12 +19,14 @@ const CommentsJoiSchema = {
 };
 
 // add data
-const addData = catchAsync(async (req, res) => {
+const addData = catchAsync(async (req, res,next) => {
   const {
     body: { bookId, commentText },
     file,
   } = req;
-
+  if (!file) {
+    return next(new AppError("coverImage is required field", 400));
+  }
   let payload = { bookId, commentText };
   if (file) {
     const profileImage = file.filename;
