@@ -8,7 +8,6 @@ const { Op } = require("sequelize");
 const SubCommentsJoiSchema = {
   AddData: Joi.object({
     commentId: Joi.string().trim().normalize().required(),
-    // profileImage: Joi.string().trim().normalize().optional(),
     subCommentText: Joi.string().trim().normalize().optional(),
   }).required(),
   UpdateData: Joi.object({
