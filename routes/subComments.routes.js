@@ -1,9 +1,7 @@
 const router = require("express").Router();
 const subCommentsController = require("../controllers/subcomments.controller");
 const { asyncHandler } = require("../middlewares/asyncHandler");
-const {
-  validateRequestBody,
-} = require("../middlewares/validators");
+const { validateRequestBody } = require("../middlewares/validators");
 const { uploadCoverImage } = require("../helpers/multer");
 
 router
