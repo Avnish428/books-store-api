@@ -21,7 +21,7 @@ const CommentsJoiSchema = {
 // add data
 const addData = catchAsync(async (req, res) => {
   const {
-    body: { bookId,commentText },
+    body: { bookId, commentText },
     file,
   } = req;
 
